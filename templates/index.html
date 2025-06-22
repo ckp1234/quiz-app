@@ -1,34 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Quizzle - Home</title>
-    <link
-      rel="stylesheet"
-      href="{{ url_for('static', filename='index.css') }}"
-    />
-  </head>
-  <body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Qiz - Home</title>
+        <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='index.css') }}"
+        />
+    </head>
+    <body>
     <header>
-      <a href="/" class="logo">Quizzle</a>
-      <nav>
-        <a href="/">Home</a>
-        <a href="/about">About</a>
-        {% if username %}
-        <a href="/progress">Progress</a>
-        <a href="/logout">Logout</a>
-        {% else %}
-        <a href="/login">Login</a>
-        {% endif %}
-      </nav>
+        <div>
+            <a id="logo" href="/">Qiz</a>
+            <a class="nav-item" style="padding-left: 30px;" href="/about">About dev</a>
+        </div>
+        <div class="nav-wrapper">
+            {% if username %}
+                <a class="nav-item" href="/progress">Progress</a>
+                <a class="nav-item" href="/logout">Logout</a>
+            {% else %}  
+                <a class="nav-item" href="/login">Login</a>
+                <a class="nav-item" href="/register">Register</a>
+            {% endif %}
+        </div>
     </header>
-    <main>
-      <section class="hero">
-        <h1>Welcome to Quizzle</h1>
-        <p>Test Your Knowledge, Master Your Skills!</p>
-        <a href="/quizzes">Start a Quiz</a>
-      </section>
-    </main>
-  </body>
+        <main>
+        <section class="hero">
+            <h1>Welcome to Qiz</h1>
+            <p>Increase your knowledge with others!</p>
+            <a href="/quizzes">Start a Quiz</a>
+        </section>
+        </main>
+    </body>
 </html>

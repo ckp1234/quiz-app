@@ -10,19 +10,19 @@ body {
     color: #333;
 }
 
-#logo {
-    color: white;
-    text-decoration: none;
-    font-size: 1.2rem;
-    font-weight: bold;
-}
-  
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 20px 42px;
     background: linear-gradient(135deg, #6b48ff, #00ddeb);
+}
+
+#logo {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: bold;
 }
   
 .nav-wrapper {

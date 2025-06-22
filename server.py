@@ -89,12 +89,7 @@ def result():
             score = ans_status
         )
 
-    return render_template(
-        "result.html", 
-        score = score, 
-        total_q = len(answers),
-        ratio = round(score/len(answers)*100
-    )
+    return render_template("result.html", score = score, total_q = len(answers), ratio = round(score/len(answers)*100))
 
 @app.route("/about", methods = ["GET"])
 def about():

@@ -1,68 +1,76 @@
 * {
     padding: 0;
     margin: 0;
-  }
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
   
-  body {
+body {
     font-family: Arial, sans-serif;
     margin: 0;
     background: linear-gradient(135deg, #6b48ff, #00ddeb);
     min-height: 100vh;
     color: #fff;
-  }
-  header {
+}
+
+header {
     background-color: rgba(0, 0, 0, 0.1);
-    padding: 15px 0;
+    padding: 20px 42px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     backdrop-filter: blur(5px);
-    position: fixed;
-    width: 100%;
     top: 0;
     z-index: 1000;
-  }
-  .logo {
-    font-size: 24px;
+}
+
+#logo {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
     font-weight: bold;
-    color: #fff;
-    padding: 0 30px;
-    text-decoration: none;
-  }
-  nav {
-    padding: 0 30px;
+}
+  
+.nav-wrapper {
     display: flex;
-    gap: 20px;
-  }
-  nav a {
-    color: #fff;
+    gap: 14px;
+}
+  
+.nav-item {
+    color: white;
+    font-weight: 500;
+    font-size: 1.2rem;
+    transition: color 0.5 ease;
     text-decoration: none;
-    font-size: 16px;
-    transition: color 0.2s;
-  }
-  nav a:hover {
-    color: #e0e0e0;
-  }
-  .hero {
+}
+
+.nav-item:hover {
+    color: gray;
+}
+
+.hero {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 90vh;
     text-align: center;
     padding: 0 20px;
-  }
-  .hero h1 {
+}
+
+.hero h1 {
     font-size: 48px;
     margin: 0;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-  }
-  .hero p {
+}
+
+.hero p {
     font-size: 24px;
     margin: 10px 0 20px;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
-  }
-  .hero a {
+}
+
+.hero a {
     background-color: #fff;
     color: #6b48ff;
     padding: 12px 24px;
@@ -71,12 +79,14 @@
     font-size: 18px;
     font-weight: bold;
     transition: background-color 0.2s, color 0.2s;
-  }
-  .hero a:hover {
+}
+
+.hero a:hover {
     background-color: #e0e0e0;
     color: #0056b3;
-  }
-  @media (max-width: 768px) {
+}
+
+@media (max-width: 768px) {
     .hero h1 {
       font-size: 36px;
     }
@@ -93,4 +103,4 @@
       font-size: 14px;
       margin-left: 10px;
     }
-  }
+}
