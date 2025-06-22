@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Qiz - A quiz website</title>
+        <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='quizzes.css') }}"
+        />
+    </head>
+    <body>
+        <header>
+            <div>
+                <a id="logo" href="/">Qiz</a>
+                <a class="nav-item" style="padding-left: 30px;" href="/about">About dev</a>
+            </div>
+            <div class="nav-wrapper">
+                <a class="nav-item" href="/login">Login</a>
+                <a class="nav-item" href="/register">Register</a>
+            </div>
+        </header>
+        <main>
+            <div class="tutorial">
+                <h1>Select a quiz</h1>
+                <h2>Increase your knowledge with others!</h2>
+            </div>
+            <div class="topics-container">
+                {% for quiz_id, title, description in quizzes %}
+                <a id="{{quiz_id}}" href="/questions?quiz_id={{quiz_id}}" class="topic-card">
+                <h2>{{title}}</h2>
+                <p>{{description}}</p>
+                </a>
+                {% endfor %}
+
+                <!-- <a href="/questions" class="topic-card">
+                <h2>Mathematics</h2>
+                <p>Challenge yourself with algebra, geometry, and calculus.</p>
+                </a>
+                <a href="/questions" class="topic-card">
+                <h2>Science</h2>
+                <p>Explore physics, chemistry, and biology concepts.</p>
+                </a> -->
+            </div>
+        </main>
+    </body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Qiz - About developer</title>
+        <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='about.css') }}"
+        />
+    </head>
+    <body>
+        <header>
+            <div>
+                <a id="logo" href="/">Qiz</a>
+                <a class="nav-item" style="padding-left: 30px;" href="/about">About dev</a>
+            </div>
+            <div class="nav-wrapper">
+                <a class="nav-item" href="/login">Login</a>
+                <a class="nav-item" href="/register">Register</a>
+            </div>
+        </header>
+        <main>
+            <section>
+                <div class="content-wrapper">
+                    <h1 class="title">Hi, I'm Phuong :)</h1>
+                    <p class="slogan">I hope you enjoy the quizzes and increase your knowledge!</p>
+                </div>
+                <div class="image">
+                    <img src="{{url_for('static', filename='me.png')}}" alt="A plain stickman with a round head, simple straight lines for body, arms, and legs, no facial features or details.">
+                </div>
+            </section>
+        </main>
+    </body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Qiz - {{title}} Quiz</title>
+        <!-- <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='questions.css') }}"
+        /> -->
+        <link rel="stylesheet" href="../static/questions.css" />
+    </head>
+    <body>
+        <header>
+            <!-- <h1>Programming Quiz</h1>
+            <p>Answer the questions below and submit to see your results.</p> -->
+            <div>
+                <a id="logo" href="/">Qiz</a>
+                <a class="nav-item" style="padding-left: 30px;" href="/about">About dev</a>
+            </div>
+            <div class="nav-wrapper">
+                <a class="nav-item" href="/login">Login</a>
+                <a class="nav-item" href="/register">Register</a>
+            </div>
+        </header>
+        <main>
+            <div class="title">
+                <h1 id="title">{{title}} Quiz</h1>
+                <h2 id="intro">Answer the questions below and submit to see your results</h2>
+            </div>
+            <div class="question-container">
+                <form method="post" action="/result?quiz_id={{quiz_id}}">
+                {% for question in questions %}
+                <div class="wrapper">
+                    <h2>Question {{loop.index}}: {{question.text}}</h2>
+                    {% for option in question.options %}
+                    <div class="option">
+                        <input type="radio" name="question_{{question.id}}" id="q{{question.id}}o{{loop.index}}" value="{{option}}"/>
+                        <label for="q{{question.id}}o{{loop.index}}">{{option}}</label>
+                    </div>
+                    {% endfor %}
+                </div>
+                {% endfor %}
+                <button type="submit">Submit Quiz</button>
+                </form>
+            </div>
+        </main>
+    </body>
+</html>
